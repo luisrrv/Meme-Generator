@@ -5,11 +5,22 @@ import logo from "../images/logo.png"
 
 
 const Meme = () => {
-  const [img, setImg] = React.useState(logo)
+  const [meme, setMeme] = React.useState({
+    topText: "",
+    bottomText: "",
+    randomImage: logo
+  })
+
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+
   const getRandomImage = () => {
-    const memesArray = memesData.data.memes
+    const memesArray = allMemeImages.data.memes
     const randomNumber = Math.floor(Math.random() * memesArray.length)
-    setImg(memesArray[randomNumber].url)
+    const url = memesArray[randomNumber].url
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      randomImage: url
+    }))
     // console.log(memesArray[randomNumber].url)
 
 
@@ -22,7 +33,7 @@ const Meme = () => {
       <input className="form--input" type="text" placeholder="Bottom text" />
       <button onClick={getRandomImage} className="form--button">GENERATE <BsFillEmojiSunglassesFill size={16} /></button>
     </div>
-    <img className="generated--meme" src={img} alt='meme' />
+    <img className="generated--meme" src={meme.randomImage} alt='meme' />
   </main>
   )
 }
