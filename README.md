@@ -1,6 +1,6 @@
-# Meme Generator
+# 😎 Meme Generator
 
-##😎 A meme generator built with React
+## A meme generator built with React
 
 pics
 
