@@ -1,6 +1,6 @@
 import React from "react"
 import { BsFillEmojiSunglassesFill } from 'react-icons/bs'
-import memesData from "../memesData"
+// import memesData from "../memesData"
 import logo from "../images/logo.png"
 
 
@@ -11,19 +11,24 @@ const Meme = () => {
     randomImage: logo
   })
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+  const [allMemes, setAllMemes] = React.useState([])
+
+  React.useEffect(() => {
+    const getMemes = async () => {
+      const res = await fetch("https://api.imgflip.com/get_memes")
+      const data = await res.json()
+      setAllMemes(data.data.memes)
+    }
+    getMemes()
+  }, [])
 
   const getRandomImage = () => {
-    const memesArray = allMemeImages.data.memes
-    const randomNumber = Math.floor(Math.random() * memesArray.length)
-    const url = memesArray[randomNumber].url
+    const randomNumber = Math.floor(Math.random() * allMemes.length)
+    const url = allMemes[randomNumber].url
     setMeme(prevMeme => ({
       ...prevMeme,
       randomImage: url
     }))
-    // console.log(memesArray[randomNumber].url)
-
-
   }
 
   const handleChange = (e) => {
@@ -37,9 +42,25 @@ const Meme = () => {
   return (
   <main>
     <div className="form">
-      <input className="form--input" name="topText" type="text" placeholder="Top text" value={meme.topText} onChange={handleChange} />
-      <input className="form--input" name="bottomText" type="text" placeholder="Bottom text" value={meme.bottomText} onChange={handleChange} />
-      <button onClick={getRandomImage} className="form--button">GENERATE <BsFillEmojiSunglassesFill size={16} /></button>
+      <input className="form--input"
+        name="topText"
+        type="text"
+        placeholder="Top text"
+        value={meme.topText}
+        onChange={handleChange}
+      />
+      <input className="form--input"
+        name="bottomText"
+        type="text"
+        placeholder="Bottom text"
+        value={meme.bottomText}
+        onChange={handleChange}
+      />
+      <button className="form--button"
+        onClick={getRandomImage}
+      >
+        GENERATE <BsFillEmojiSunglassesFill size={16} />
+      </button>
     </div>
     <div className="meme">
       <img className="generated--meme" src={meme.randomImage} alt='meme' />
