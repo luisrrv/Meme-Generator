@@ -4,7 +4,7 @@ import { BsFillEmojiSunglassesFill } from 'react-icons/bs'
 import logo from "../images/logo.png"
 
 
-const Meme = () => {
+const Meme = (props) => {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
@@ -41,15 +41,15 @@ const Meme = () => {
 
   return (
   <main>
-    <div className="form">
-      <input className="form--input"
+    <div className="form" id={props.darkMode ? "" : "light-form"}>
+      <input className="form--input" id={props.darkMode ? "" : "light-form"}
         name="topText"
         type="text"
         placeholder="Top text"
         value={meme.topText}
         onChange={handleChange}
       />
-      <input className="form--input"
+      <input className="form--input" id={props.darkMode ? "" : "light-form"}
         name="bottomText"
         type="text"
         placeholder="Bottom text"

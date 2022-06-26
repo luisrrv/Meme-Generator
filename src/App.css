@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-body {
+.App {
+  min-height: 100vh;
   font-family: 'Comfortaa', cursive;
   margin: 0;
   background-color: rgb(30, 30, 30);
@@ -11,6 +12,17 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
+}
+#light {
+  background-color: rgb(225, 225, 225);
+}
+#light-form {
+  background-color: rgb(234, 234, 234);
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.202);
+  color: black;
+}
+#dark-text {
+  color: rgb(22, 22, 22);
 }
 
 a {
@@ -30,7 +42,7 @@ button:focus {
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   height: 120px;
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
@@ -39,8 +51,15 @@ button:focus {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
 }
 
+.app-name {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
 .nav--image {
-  height: 32%;
+  height: 24px;
   margin-right: 6px;
 }
 
@@ -49,6 +68,47 @@ button:focus {
   margin-top: 0;
   letter-spacing: 4px;
   font-family: 'Nova Flat', cursive;
+}
+.toggler {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.toggler--light {
+  margin-top: 0;
+  font-size: 12px;
+}
+.toggler--slider{
+  margin-top: 0;
+}
+.toggler--dark {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.toggler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: #dddddd;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #dddddd;
+  box-sizing: content-box;
+}
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: #a34ac3;
+  border-radius: 50%;
+}
+#toggle-dark {
+  justify-content: flex-end;
+  background-color: #2B283A;
+  border: 1px solid #2B283A;
 }
 
 .nav--project {
