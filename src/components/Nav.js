@@ -2,7 +2,6 @@ import React from "react"
 import img from "../images/logo.png"
 
 const Nav = (props) => {
-  const slider = document.querySelector(".toggler--slider")
   return (
   <nav className="nav">
     <div className="app-name">

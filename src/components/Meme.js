@@ -65,7 +65,7 @@ const Meme = (props) => {
     <div className="meme">
       <img className="generated--meme" src={meme.randomImage} alt='meme' />
       <h2 className="meme--text top">{meme.randomImage === logo ? "write your top/bottom text" :meme.topText}</h2>
-      <h2 className="meme--text bottom">{meme.randomImage == logo ? "then click generate to get meme image" :meme.bottomText}</h2>
+      <h2 className="meme--text bottom">{meme.randomImage === logo ? "then click generate to get meme image" :meme.bottomText}</h2>
     </div>
   </main>
   )
