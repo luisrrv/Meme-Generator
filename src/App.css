@@ -20,6 +20,7 @@ body::-webkit-scrollbar {
   background-color: rgb(234, 234, 234);
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.202);
   color: black;
+  border: 1px solid rgb(211, 211, 211);
 }
 #dark-text {
   color: rgb(22, 22, 22);
