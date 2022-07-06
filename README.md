@@ -1,6 +1,6 @@
 # 😎 Meme Generator
 
-## A meme generator built with React
+## A meme generator built with ReactJS
 
 <p align="center" >
   <img src="https://user-images.githubusercontent.com/69304255/175802424-625c94ee-df0c-4747-a6ac-548e560ff4dd.png" width="500" />
