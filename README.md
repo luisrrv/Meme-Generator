@@ -10,6 +10,6 @@
 </p>
 <br>
 
-## Create your own! ⬇️
+## Try it and create your own memes! ⬇️
 
 https://luisrrv-meme.netlify.app/
