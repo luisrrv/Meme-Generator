@@ -1,6 +1,7 @@
 # 😎 Meme Generator
 
 ## A meme generator built with ReactJS
+### (with light and dark modes)
 ## Try it and create your own memes! ⬇️
 https://luisrrv-meme.netlify.app/
 
