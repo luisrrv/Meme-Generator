@@ -2,7 +2,7 @@
 
 ## A meme generator built with ReactJS
 ### (with light and dark modes)
-## Try it and create your own memes! ⬇️
+## ⬇️ Check it out and create your own memes!
 https://luisrrv-meme.netlify.app/
 
 <p align="center" >
